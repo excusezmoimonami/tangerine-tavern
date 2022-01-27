@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!--
+	@https://www.khanacademy.org/ - the basics of HTML and CSS
+	@https://www.khanacademy.org/profile/Voldemort271 - the layout and design of the webpage; on-scroll animations
+	@https://www.w3schools.com/ - extra information and commands in HTML, CSS, and Javascript
+	@https://images.squarespace-cdn.com/content/v1/59d296dc6f4ca35b8e07d4f8/1528307795693-RIA41IZ5TXJCKO199TGF/15+More+Color+Palettes+%7C+Sunday+Morning+Color+Palette?format=1000w - color palette
+	@https://www.awwwards.com/ - gallery of professional web development for inspiration
+	@https://unsplash.com/ - photos
+	@https://fonts.google.com/ - Google fonts
+	@https://fonts.google.com/icons - Google icons
+	@https://en.wikipedia.org/wiki/Wikipedia:Images - icons
+	@https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css - icons
+	@https://validator.w3.org/ - debug and validate code
+
+	There may also be some other sources to give credit to that we are not aware of.
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300&family=Space+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>wip</title>
+
+<script>
+	function showAlert() {
+		var myText="You want to read more about us? Pft! We already provided you with all the necessary information of our existence. If you wanna learn more for some weird reason, look it up on Noodle or your school textbooks. Can't find it anywhere? That sounds like a 'you' problem.";
+		alert(myText);
+  	}
+	function theEnding() {
+		var myText="Your information has been submitted! Thank you for booking your stay with us. Have a nice rest of your life.";
+		alert(myText);
+  	}
+</script>
+<style>
+	* {
+		scroll-behavior: smooth;
+		animation: introducing 3s;
+	}
+
+	@keyframes introducing {
+		0% {
+			transform: translateY(-90px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.movement-scroll {
+		opacity: 0;
+	}
+
+	.movement-scroll.view {
+		opacity: 1;
+	}
+
+	.view.from-top {
+		animation: from-top 0.7s ease-in-out;
+	}
+
+	@keyframes from-top {
+		0% {
+			transform: translateY(20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.view.from-left {
+		animation: from-left 0.7s ease-in-out;
+	}
+
+	@keyframes from-left {
+		0% {
+			transform: translateX(-20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	.view.from-right {
+		animation: from-right 0.7s ease-in-out;
+	}
+
+	@keyframes from-right {
+		0% {
+			transform: translateX(20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	.view.from-bottom {
+		animation: from-bottom 0.7s ease-in-out;
+	}
+
+	@keyframes from-bottom {
+		0% {
+			transform: translateY(-20px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.view.disappear-fade {
+		animation: disappear-fade 1.5s ease-in-out;
+	}
+
+	@keyframes disappear-fade {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	#wrapper {
+		margin-left: auto;
+		margin-right: auto;
+		width: 960px;
+	}
+
+	body {
+		background-color: #e9e6e1;
+	}
+
+	.title {
+		margin: 0px;
+		background-image: url("https://images.unsplash.com/photo-1574643156929-51fa098b0394?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: top;
+		background-size: cover;
+	}
+
+	.title h1 {
+		margin: 0px;
+		padding: 60px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #292929;
+		font-size: 80px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.title h6 {
+		margin: 0px 0px 50px;
+		padding: 10px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 17px;
+		text-align: center;
+		letter-spacing: 5px; 
+	}
+
+	.button-circle {
+		margin: 0px 47.5% 0px 47.5%;
+		padding: 13px 20px;
+		border-radius: 50%;
+		background-color: rgba(41, 41, 41, 0.06);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.button-circle:hover {
+		transform: scale(1.05);
+		background-color: rgba(41, 41, 41, 0.03);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+		text-decoration: none;
+	}
+
+	.title p {
+		margin: 270px 0px 0px;
+		color: rgba(255, 255, 255, 0);
+	}
+
+	.intro h2 {
+		margin: 200px 0px 0px;
+		padding: 100px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #7F867B;
+		font-size: 50px;
+		text-align: left;
+		letter-spacing: 2px;
+	}
+
+	.intro h5 {
+		margin: 20px 0px 60px;
+		padding: 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(127, 134, 123, 0.8);
+		font-size: 17px;
+		text-align: left;
+		letter-spacing: 2px;
+	}
+
+	.green-button-rectangle {
+		margin: 40px 40px 0px 0%;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(199, 199, 187, 0.5);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.green-button-rectangle:hover {
+		transform: scale(1.05);
+		background-color: rgba(199, 199, 187, 0.3);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.intro img {
+		margin: -290px 0px 0px;
+		object-fit: cover;
+		border-radius: 30px;
+		height: 300px;
+		width: 300px;
+		float: right;
+	}
+
+	.intro img:hover {
+		cursor: pointer;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.15);
+	}
+
+	.about h2 {
+		margin: 200px 0px 0px;
+		padding: 100px 0px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #7F867B;
+		font-size: 50px;
+		text-align: right;
+		letter-spacing: 2px;
+	}
+
+	.about h5 {
+		margin: 20px 0px 0px;
+		padding: 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(127, 134, 123, 0.8);
+		font-size: 17px;
+		text-align: right;
+		letter-spacing: 2px;
+	}
+
+	.brown-button-rectangle {
+		float: right;
+		margin: 40px 40px 0px 0%;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(175, 159, 140, 0.5);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.brown-button-rectangle:hover {
+		transform: scale(1.05);
+		background-color: rgba(175, 159, 140, 0.3);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	#view-our-offerings-button {
+		float: right;
+		margin: 40px 0px 0px 0%;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(199, 199, 187, 0.5);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: center;
+	}
+
+	#view-our-offerings-button:hover {
+		transform: scale(1.05);
+		background-color: rgba(199, 199, 187, 0.3);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.about img {
+		margin: -390px 0px 0px;
+		object-fit: cover;
+		border-radius: 30px;
+		height: 400px;
+		width: 300px;
+		float: left;
+	}
+
+	.about img:hover {
+		cursor: pointer;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.15);
+	}
+
+	.offerings h2 {
+		margin: 200px 0px 0px;
+		padding: 100px 0px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #7F867B;
+		font-size: 50px;
+		text-align: left;
+		letter-spacing: 2px;
+	}
+
+	.offerings h5 {
+		margin: 20px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(127, 134, 123, 0.8);
+		font-size: 17px;
+		text-align: left;
+		letter-spacing: 2px;
+	}
+
+	#book-now-button {
+		float: left;
+		margin: 40px 40px 0px 0%;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(175, 159, 140, 0.5);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: center;
+	}
+
+	#book-now-button:hover {
+		transform: scale(1.05);
+		background-color: rgba(175, 159, 140, 0.3);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.more-details-button {
+		float: left;
+		margin: 40px 0px 0px 0%;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(199, 199, 187, 0.5);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: center;
+	}
+
+	.more-details-button:hover {
+		transform: scale(1.05);
+		background-color: rgba(199, 199, 187, 0.3);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.offerings img {
+		margin: -220px 0px 0px;
+		object-fit: cover;
+		border-radius: 30px;
+		height: 250px;
+		width: 250px;
+		float: right;
+	}
+
+	.offerings img:hover {
+		cursor: pointer;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.15);
+	}
+
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(41, 41, 41, 0.4);
+	}
+
+	.modal-content {
+		color: rgba(41, 41, 41, 0.8);
+		background-color: rgba(227, 228, 224);
+		margin: 0px 110px 200px 110px;
+		padding: 20px;
+		border: none;
+		width: 80%;
+		font-family: 'Montserrat', sans-serif;
+		letter-spacing: 0px; 
+	}
+
+	.modal-content p {
+		padding: 0px 0px 30px;
+	}
+
+	table {
+		border-spacing: 0;
+		width: 92%;
+		border: 1px solid rgba(41, 41, 41, 0.6);
+		background-color: rgba(199, 199, 187, 0.15);
+		letter-spacing: 1px;
+	}
+
+	th {
+		color: rgba(127, 134, 123, 0.9);
+	}
+
+	th, td {
+		text-align: left;
+		padding: 25px;
+	}
+
+	tr:nth-child(even) {
+		background-color: rgba(199, 199, 187, 0.4);
+	}
+
+	.close {
+		color: rgba(41, 41, 41, 0.6);
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.close:hover,
+	.close:focus {
+		color: rgba(41, 41, 41, 0.8);
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.reviews h2 {
+		margin: 200px 0px 0px;
+		padding: 100px 0px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #292929;
+		font-size: 50px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.reviews h5 {
+		margin: 20px 0px 40px;
+		padding: 0px 0px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 17px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.button1 {
+		float: left;
+		margin: 0px 350px 0px 0px;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(199, 199, 187, 0.5);
+		border: none;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: left;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+		letter-spacing: 1px;
+	}
+
+	.button2 {
+		float: right;
+		margin: 60px 0px 60px 350px;
+		padding: 18px 20px;
+		border-radius: 10px;
+		background-color: rgba(175, 159, 140, 0.5);
+		border: none;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 15px;
+		text-align: right;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+		letter-spacing: 1px;
+	}
+
+	.reviews h6 {
+		margin: 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 17px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	#image-reviews1 {
+		float: left;
+		margin: 100px 163px 0px 0px;
+	}
+
+	#image-reviews2 {
+		opacity: 0.6;
+		margin: 86px 163px 0px 0px;
+		float: left;
+	}
+
+	#image-reviews3 {
+		opacity: 0.8;
+		margin: 96px 163px 0px 0px;
+		float: rightt;
+	}
+
+	#image-reviews4 {
+		opacity: 0.5;
+		margin: 80px 0px 0px 0px;
+		float: right;
+	}
+
+	.faq h2 {
+		margin: 100px 0px 0px;
+		padding: 100px 0px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #292929;
+		font-size: 50px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.faq h5 {
+		margin: 20px 0px 60px;
+		padding: 0px 0px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 17px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.accordion {
+		margin: 0px;
+		background-color: rgba(199, 199, 187, 0.5);
+		color: rgba(41, 41, 41, 0.7);
+		cursor: pointer;
+		padding: 25px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 15px;
+		letter-spacing: 1px;
+	}
+
+	.active, .accordion:hover {
+		background-color: rgba(199, 199, 187, 0.7);
+	}
+
+	.panel {
+		margin: 0px;
+		padding: 25px;
+		display: none;
+		background-color: rgba(199, 199, 187, 0.15);
+		overflow: hidden;
+		font-family: 'Montserrat', sans-serif;
+		text-align: left;
+		font-size: 15px;
+		color: rgba(41, 41, 41, 0.6);
+		letter-spacing: 1px;
+	}
+
+	.book-now h2 {
+		margin: 50px 0px 0px;
+		padding: 100px 60px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: #292929;
+		font-size: 50px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.book-now h5 {
+		margin: 20px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 17px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.book-now h3 {
+		margin: 0px 0px 0px;
+		padding: 100px 0px 0px 0px;
+		font-family: 'Poppins', sans-serif;
+		color: rgba(41, 41, 41, 0.6);
+		font-size: 22px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.step1 {
+		margin: 70px 0px 0px;
+		padding: 25px 50px;
+		border-radius: 15px;
+		border: none;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+
+	.step1 h4 {
+		margin: 0px 0px 0px;
+		padding: 12px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(127, 134, 123, 0.8);
+		font-size: 16px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.step1 h3 {
+		margin: 0px 0px 0px;
+		padding: 10px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.6);
+		font-size: 25px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.step1 h5 {
+		margin: 0px 0px 0px;
+		padding: 20px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 14px;
+		text-align: left;
+		letter-spacing: 2px;
+		line-height: 25px;
+	}
+
+	.step1:hover {
+		cursor: pointer;
+		transform: translate(0px, -10px);
+		margin: 70px 0px 0px;
+	}
+
+	.step2 label {
+		padding: 0px 0px 0px 40px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+
+	.step2 input[type=text] {
+		margin: 70px 0px 0px 42%;
+		width: 25px;
+		padding: 12px 8px;
+		border-radius: 10px;
+		border: 1px solid rgba(41, 41, 41, 0.3);
+		background-color: rgba(41, 41, 41, 0.1);
+		text-align: center;
+		font-family: 'Space Mono', monospace;
+	}
+
+	.step3 {
+		margin: 70px 0px 0px;
+		padding: 25px 50px;
+		border-radius: 15px;
+		border: none;
+		box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+
+	.step3 h4 {
+		margin: 0px 0px 0px;
+		padding: 12px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(127, 134, 123, 0.8);
+		font-size: 16px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.step3 h3 {
+		margin: 0px 0px 0px;
+		padding: 10px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.6);
+		font-size: 25px;
+		text-align: center;
+		letter-spacing: 2px;
+	}
+
+	.step3 h5 {
+		margin: 0px 0px 0px;
+		padding: 20px 0px 0px;
+		font-family: 'Montserrat', sans-serif;
+		color: rgba(41, 41, 41, 0.8);
+		font-size: 14px;
+		text-align: left;
+		letter-spacing: 2px;
+		line-height: 25px;
+	}
+
+	.step3:hover {
+		cursor: pointer;
+		transform: translate(0px, -10px);
+		margin: 70px 0px 0px;
+	}
+
+	.step4 input[type=text] {
+		margin: 70px 0px 0px 39%;
+		width: 190px;
+		padding: 12px 8px;
+		border-radius: 10px;
+		border: 1px solid rgba(41, 41, 41, 0.3);
+		background-color: rgba(41, 41, 41, 0.1);
+		text-align: center;
+		font-family: 'Space Mono', monospace;
+	}
+
+	.step6 input[type=text] {
+		margin: 30px 0px 30px 38.9%;
+		width: 190px;
+		padding: 12px 8px;
+		border-radius: 10px;
+		border: 1px solid rgba(41, 41, 41, 0.3);
+		background-color: rgba(41, 41, 41, 0.1);
+		text-align: center;
+		font-family: 'Space Mono', monospace;
+	}
+
+	footer {
+		background-color: #D4C8BE;
+		margin: 70px -155px -8px -155px;
+		padding: 0px 0px 20px 0px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: stretch;
+	}
+
+	#address-footer {
+		padding: 40px 139px 10px 87px;
+		box-sizing: border-box;
+	}
+
+	#contact-footer {
+		padding: 40px 139px 10px 0px;
+		box-sizing: border-box;
+	}
+
+	#sections-footer {
+		padding: 40px 139px 10px 0px;
+		box-sizing: border-box;
+	}
+
+	#sections-footer a {
+		color: rgba(175, 159, 140, 0.9);
+		text-decoration: none;
+	}
+
+	#sections-footer a:hover {
+		color: rgba(127, 134, 123, 0.8);
+		text-decoration: none;
+	}
+
+	#follow-us-footer {
+		padding: 40px 87px 10px 0px;
+		box-sizing: border-box;
+	}
+
+	.footer-title {
+		font-size: 14px;
+		text-align: left;
+		color: rgba(41, 41, 41, 0.7);
+		font-family: 'Poppins', sans-serif;
+		letter-spacing: 2px;
+	}
+
+	 .footer-description {
+		margin: 0px 0px 0px;
+		font-size: 12px;
+		text-align: left;
+		color: rgba(175, 159, 140, 0.9);
+		font-family: 'Poppins', sans-serif;
+		letter-spacing: 2px;
+	}
+
+	.bottom-footer {
+		border-top: 1px solid rgba(41, 41, 41, 0.7);
+		margin: 45px 120px 10px 120px;
+		padding: 40px 45px;
+		font-size: 11px;
+		text-align: center;
+		color: rgba(41, 41, 41, 0.9);
+		font-family: 'Space Mono', monospace;
+		letter-spacing: 2px;
+	}
+
+	#different-button-circle {
+		margin: 0px 0px 0px 0px;
+		padding: 15px 19px;
+		border-radius: 50%;
+		background-color: rgba(175, 159, 140, 0.5);
+		border: none;
+		font-family: 'Space Mono', monospace;
+		color: rgba(41, 41, 41, 0.5);
+		font-size: 12px;
+		text-align: center;
+		text-decoration: none;
+		letter-height: 10px;
+	}
+
+	#different-button-circle:hover {
+		transform: scale(1.05);
+		background-color: rgba(175, 159, 140, 0.3);
+		color: rgba(41, 41, 41, 0.3);
+		cursor: pointer;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+		text-decoration: none;
+	}
+
+	::selection {
+		background: rgba(127, 134, 123, 0.8);
+		color: rgba(227, 228, 224, 0.8);
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: transparent;    
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #C7C7BB;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: rgba(127, 134, 123, 0.5); 
+	}
+</style>
+</head>
+<body style="margin: 0px;">
+	<div id="wrapper">
+	<div class="title" id="fro-bottom-to-top">
+		<h1>T⋅T</h1>
+		<h6>Luxury that never quýts.</h6>
+		<a href="#fro-title-to-intro" class="button-circle">∨</a>
+		<p>-</p>
+	</div>
+
+	<div class="intro" id="fro-title-to-intro">
+		<h2 class="movement-scroll from-left">Welcome to <br>the home <br>of tangerines.</h2>
+		<h5 class="movement-scroll from-left">Where we all mingle and later become orange juice.</h5>
+		<a href="#fro-intro-to-about" class="green-button-rectangle movement-scroll from-left">Explore >></a>
+		<img class="movement-scroll disappear-fade" src="https://images.unsplash.com/photo-1579169326371-ccb4e63f7889?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80">
+	</div>
+
+	<div class="about" id="fro-intro-to-about">
+		<h2 class="movement-scroll from-right">Gather around to <br>hear our humble <br>beginnings.</h2>
+		<h5 class="movement-scroll from-right">Under the September golden sun and into the <br>shade of the tangerine tree was born tangee. <br>tangee was raised by his mother, half-onion and <br>half-tangerine. Shortly, she disappeared <br>afterwards, due to the invasion of the humanoid <br>species, the Trojans, in the area. tangee was left <br>alone in the world to fend for himself. However, his <br>self-resilience helped him move forward in life. In <br>late December of 2021, when tangee was only <br>three months old, he stumbled upon rows of <br>tangerine trees. tangee decided to set up a tavern <br>there. He fought with the Trojans, who refused to <br>help him and his cause. Fast-forward to this day, <br>we have been offering services to all sorts of <br>produce. We pride ourselves in our diversity, <br>inclusivity, and abundance.</h5>
+		<a href="#fro-about-to-offerings" id="view-our-offerings-button" class="green-button-rectangle movement-scroll from-right">View our offerings >></a>
+		<button onclick="showAlert()" class="brown-button-rectangle movement-scroll from-right">Read more >></button>
+		<img class="movement-scroll disappear-fade" src="https://images.unsplash.com/photo-1549675584-91f19337af3d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxpYnJhcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+	</div>
+	
+	<div class="offerings" id="fro-about-to-offerings">
+		<h2 class="movement-scroll from-left">Our offerings to <br>demanding guests.</h2>
+		<h5 class="movement-scroll from-left">From spa treatments to community activities, from <br>vegetarian meals to pure delights, from guest rooms <br>to VIP suites, from Mount Citrus to Tofu Treetops, we <br>offer an abundance of relaxation, activities, foods, <br>rooms, and sight-seeing trips. We would love to have <br>you here with us to enjoy these amazing opportunities.</h5>
+		<a href="#fro-offerings-to-reviews" class="brown-button-rectangle movement-scroll from-left" style="float:left;">Customer reviews >></a>
+		<a class="green-button-rectangle more-details-button movement-scroll from-left" id="myBtn">More details >></a>
+		<img class="movement-scroll disappear-fade" src="https://images.unsplash.com/photo-1512233866604-11b9c3d7ec96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmllbGR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60">
+
+	<div id="myModal" class="modal">
+
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<table>
+		<tr>
+			<th>Department</th>
+			<th>Time Length</th>
+			<th>Offerings</th>
+			<th>Cost</th>
+		</tr>
+		<tr>
+			<td>Beauty & Self-care</td>
+			<td>15-90min</td>
+			<td>- massage with mango-made products<br>- manicures applied with environmental-friendly nail products<br>- pedicures that make your feet feel silky and light<br>- creams, lotions, and face masks to feel younger and refreshed<br>- natural hot springs and lagoons fill our Jacuzzis and hot tubs that overlook the scenery<span style="color: #7F867B;">*</span></td>
+			<td>$0.95/min</td>
+		</tr>
+		<tr>
+			<td>Community Activities</td>
+			<td>30-300min</td>
+			<td>- daily arts and crafts session located at the outside benches overlooking the hills<br>- weekly lottery and raffle ticket drawings<br>- annual dance and music festival remembering Tangerine Tavern's humble beginnings and cause</td>
+			<td>FREE</td>
+		</tr>
+		<tr>
+			<td>Culinary Arts</td>
+			<td>60-180min</td>
+			<td>- breakfast in tavern's lobby on first floor<br>- lunch and dinner at nearby restaurants associated with Tangerine Tavern<br>- all-day picnics located in the countryside<br>- watch professional chefs cook up enticing cuisines in front of you<span style="color: #7F867B;">*</span><br>- evening fine dining at Michewlin star restaurant Lilybelle Fine Dining<span style="color: #7F867B;">*</span></td>
+			<td>FREE with in-offering purchases</td>
+		</tr>
+		<tr>
+			<td>Visual/Performing Arts</td>
+			<td>180-240min</td>
+			<td>- prestigious gallery of art containing notable works of paintings, sculptures, digital art, etc.<br>- weekly concerts performed by world-renowned artists and musicians<br>- annual plays, musicals, and dance performances directed by playwright William Milkshakespeare</td>
+			<td>$45/person</td>
+		</tr>
+		<tr>
+			<td>Living Spaces</td>
+			<td>N/A</td>
+			<td>- guest rooms include two bedrooms with private bathrooms, a kitchen and dining room, two small closets, a medium-sized balcony overlooking the view, 24/7 security system, a daily 18-hour room service, daily clean-up, free WiFi, and free bathing products; $125/day<br>- VIP rooms include five bedrooms with private bathrooms, a large kitchen and dining room, three walk-in closets, a large-sized balcony and patio overlooking the view, a private indoor Jacuzzi and swimming pool, twice the regular 24/7 security system, 24/7 room service, two-times daily clean-up, free WiFi, free bathing products, and special exclusive benifits and rewards; $210/day<br>- our cozy cottages include three bedrooms with private bathrooms, a kitchen and dining room, two small closets, two medium-sized balconies overlooking the countryside, 24/7 security system, daily clean-up, free WiFi, free bathing products, a small garden with pathways and fountains, and the perfect spot for watching the scenery and going on picnics; $75/day</td>
+			<td>See each offering's prices.</td>
+		</tr>
+		<tr>
+			<td>Sight-seeing Trips</td>
+			<td>120min-2weeks</td>
+			<td>- hiking/biking along the Trail Mix; FREE with materials and equipment included<span style="color: #7F867B;">**</span><br>- zipline over Tofu Treetops; $15/person<span style="color: #7F867B;">**</span><br>- paraglide over the countryside and Mount Citrus; $25/person with materials and equipment included<span style="color: #7F867B;">**</span><br>- ride up the gondola and into the clouds; $20/person<br>- ski; $15/person with materials and equipment included<span style="color: #7F867B;">**</span><br>- swimming/diving in our natural springs and lagoons; $15/person<span style="color: #7F867B;">**</span><br>- camp in the wilderness with your family and friends; $175/day with materials and equipment NOT included<br>- visit our Butterfly Garden to experience the beauty of butterflies, flowers, and plants; FREE<span style="color: #7F867B;">**</span><br>- travel to the nearest villages and towns such as Pearis, New Pork, and Squidney to experience their unique cultures; $275/day</td>
+			<td>See each offering's prices.</td>
+		</tr>
+		</table>
+		<p><span style="color: #7F867B;">*</span>$25/person<br><span style="color: #7F867B;">**</span>Only available during specific seasons.</p>
+	</div>
+
+	</div>
+	</div>
+
+	<div class="reviews" id="fro-offerings-to-reviews">
+		<h2 class="movement-scroll from-top">Our customers are raving how <br>good our services are.</h2>
+		<h5 class="movement-scroll from-top">Still not sure about booking your stay with us? Well, we'll give you our customers' <br>opinions about us! They're <em>totally</em> real!</h5>
+		<button class="button1 movement-scroll from-left"><b>Granny Smith</b><br><br>This is honestly the BEST place to book your stay. I booked my stay since seven months ago after hearing how my friends loved this place! And I have to agree with them! The staff here is really nice and the offerings here are superb! And that fine dining experience... so good! Highly recommend!!!<br><br><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></button>
+		<button class="button2 movement-scroll from-right"><b>Haru</b><br><br>I got to meet many friends here. And I met the love of my life. I highly recommend this place because you will meet the love of your life like I did. I just wish that there were unlimited drinks though.<br><br><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star_half</i></button>
+		<button class="button1 movement-scroll from-left"><b>Benedict Cucumberbatch</b><br><br>I went here with my twin brother, Bill Nye, and honestly, I'm impressed. I try to not go and travel since I don't keep track of time, but this was a getaway! I love the crystal green lagoons and sparkling refreshments. Reminds me of the thyme stone...<br><br><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></button>
+		<button class="button2 movement-scroll from-right"><b>wOaHwOaH</b><br><br>woah! This just leaves me astounded! Love the offerings and everything about this place is amazing! wOaH<br><br><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i><i class="material-icons">star</i></button>
+		<h6>And we have been mentioned by world-renowned companies and newspapers.</h6>
+		<image id="image-reviews1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Google_2015_logo_colorless_mourning_period.svg/1200px-Google_2015_logo_colorless_mourning_period.svg.png" style="width: 15%;">
+		<image id="image-reviews2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png" style="width: 4%">
+		<image id="image-reviews3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/VOGUE_LOGO.svg/1200px-VOGUE_LOGO.svg.png" style="width: 14%;">
+		<image id="image-reviews4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Disney_wordmark.svg/1050px-Disney_wordmark.svg.png" style="width: 16%">
+
+	<div class="faq" id="faq-section">
+		<h2 class="movement-scroll from-top">Frequently Asked Useless Questions</h2>
+		<h5 class="movement-scroll from-top">Before asking any questions, please explore <em>all</em> of our website. Either way, this section shouldn't exist, but for those people who just want to get a bit more information... Voila!</h5>
+		<button class="accordion movement-scroll from-top"><b>+ How long will it take for your staff to reach us by email and/or phone?</b></button>
+		<p class="panel">By email, it will take us about 5-30 minutes depending on who is responding, how big the problem is, or how often the lazy intern is refreshing our inbox.<br><br>Our phones and staff always work and operate 24/7, so it may take some time depending on how busy our phones and staff are. The early mornings and late afternoons are usually our busiest times.</p>
+		<button class="accordion movement-scroll from-top"><b>+ Hi! Um... my family and I are staying here for about a month and we're wondering where we can put all of our luggage and if we can wash our clothes or not. Where can we do this? It's really urgent!!!</b></button>
+		<p class="panel">Hi! Um... you and your family can store your luggage into the closets provided in your room(s). If the closets aren't big enough, some other space must be taken up. Don't fret though! We have tested the space of each closet and, we can 0.01% guarantee you that enough space can fit all of your stubborn luggage!<br><br>Our cleaning team will come and take away your clothes that need washing. If you lay them out intentionally to allow us to do so, we can wash your clothes for you and have them sent back to you and your family by nighttime. For our cottages, laundry must be done the old-fashioned way and by you and your family. We're sorry not sorry for any inconviences caused.</p>		
+		<button class="accordion movement-scroll from-top"><b>+ Are pets allowed here? I hope they are since my fluffy bunny named PoggoStick really loves me and I love him too so I hope animals are allowed and they better be because if they're not then I'm gonna tell Mommy and Mommy is gonna be angry.</b></button>
+		<p class="panel">Sweetie, pets are allowed here! Yay! Your fairy godmother granted your wish! However, if your pets get out of control and end up eating our staff or causing chaos, I'm going to tell Mommy that you somehow asked a question on our platform and posted your question on here. How is your grammar so good? If your grammar is so good, surely you must have common sense to not go on adults-only sites...</p>
+		<button class="accordion movement-scroll from-top"><b>+ How can I travel to Tangerine Tavern?</b></button>
+		<p class="panel">To travel to Tangerine Tavern, you have to get on a space shuttle to Mars. Then, you must ride a car back to Earth. Take a ferry to the River Styx. Pay Charon, the guy who gets you to the other side, and hop onto the boat. Charon will take you to the countryside. Afterwards, go on a horse-drawn carriage and your destination is on the right. 0216 Citrus Lane CaliFlorida, United Produce. Arrived.</p>
+		<button class="accordion movement-scroll from-top"><b>+ What type of food do you provide at your restaurants?</b></button>
+		<p class="panel">This question is not specific. So we'll assume you're talking about the food content.<br><br>At our establishments, we offer food for carnivores, herbivores, and omnivores alike. Just remember to tell your food allergies to your waiter/waitress and future problems can be avoided from there. Please also don't ask why our staff are technically cooking themselves. If this question or point arises... WE RESERVE THE RIGHT TO REFUSE SERVICE TO ANYONE.</p>
+		<button class="accordion movement-scroll from-top"><b>+ I would like to work out. Are there any gym or weight rooms here?</b></button>
+		<p class="panel">Sorry, we don't have any work-out rooms for you. Looks like you have to go the old-fashioned way and lift up rocks yourselves. If you really want an intense work-out, you can help us grind berries or olives to help with our food cuisines. If not, be grape-ful!</p>
+		<button class="accordion movement-scroll from-top"><b>+ Are reservations required?</b></button>
+		<p class="panel">No, reservations are not required. That's why we're the best place to book your stay.</p>
+		<button class="accordion movement-scroll from-top"><b>+ I don't get what is going on here. Is this really a tavern or a joke?</b></button>
+		<p class="panel">No, Larry, it's not a joke, it's a poem. All of these words on here talk about tangerines in a lyrical poetic way. And you say you don't understand? Well understand! There's not much more to explain.</p>
+		<button class="accordion movement-scroll from-top"><b>+ None of my questions are answered here. Is there any way how I can ask you my question. If not, me sad.</b></button>
+		<p class="panel">Yes! There is a way to contact us! You can contact us at <b><span style="text-decoration: underline; cursor: pointer;">contact@tangerinetavern.com</span></b> or <b><span style="text-decoration: underline; cursor: pointer; transform: translate(0px, -10px);">+1 (333) 500-0216</span></b>.</p>
+	</div>
+
+	<div class="book-now" id="book-now-section">
+		<h2 class="movement-scroll from-top">Ready to book now?</h2>
+		<h5 class="movement-scroll from-top">So you've finally made up your indecisive mind to book your stay with us at <br>Tangerine Tavern. Don't know which choice to choose or how long you should <br>do an offering for? No problem! Just guess and pay the amount. Let's say this <br>is good buisness practice and you were simply just donating.<br><br>Remember to read everything carefully and input your information in the <br>required areas (<span style="color:#7F867B;">*</span>). Thank you very much for booking your stay with us!<br></h5>
+		<h3 class="movement-scroll from-bottom">Step 1: Choose your room.<span style="color:#7F867B;">*</span></h3>
+	<button class="step1 movement-scroll from-bottom">
+		<h4>Guest Rooms</h4>
+		<h3>$125<span style="font-size: 16px;">/day</span></h3>
+		<h5><i class="fa fa-check"></i> two bedrooms with <br>private bathrooms<br><i class="fa fa-check"></i> kitchen and dining <br>room<br><i class="fa fa-check"></i> two small closets<br><i class="fa fa-check"></i> medium-sized <br>balcony overlooking <br>the view<br><i class="fa fa-check"></i> 24/7 security <br>system<br><i class="fa fa-check"></i> daily 18-hour room <br>service<br><i class="fa fa-check"></i> daily clean-up<br><i class="fa fa-check"></i> free WiFi<br><i class="fa fa-check"></i> free bathing <br>products</h5>
+	</button>
+	<button class="step1 movement-scroll from-bottom" style="margin: 0px 0px 0px 22px;">
+		<h4>VIP Rooms</h4>
+		<h3>$210<span style="font-size: 16px;">/day</span></h3>
+		<h5><i class="fa fa-check"></i> five bedrooms with <br>private bathrooms<br><i class="fa fa-check"></i> kitchen and dining <br>room<br><i class="fa fa-check"></i> three walk-in <br>closets<br><i class="fa fa-check"></i> large-sized balcony <br>and patio <br>overlooking the view<br><i class="fa fa-check"></i> private indoor <br>Jacuzzi and swimming <br>pool<br><i class="fa fa-check"></i> twice the regular <br>24/7 security system<br><i class="fa fa-check"></i> 24/7 room service<br><i class="fa fa-check"></i> two-times daily <br>clean-up<br><i class="fa fa-check"></i> free WiFi<br><i class="fa fa-check"></i> free bathing <br>products<br><i class="fa fa-check"></i> special exclusive <br>benefits and rewards</h5>
+	</button>
+	<button class="step1 movement-scroll from-bottom" style="float: right;">
+		<h4>Cozy Cottages</h4>
+		<h3>$75<span style="font-size: 16px;">/day</span></h3>
+		<h5><i class="fa fa-check"></i> three bedrooms with <br>private bathrooms<br><i class="fa fa-check"></i> kitchen and dining <br>room<br><i class="fa fa-check"></i> two small closets<br><i class="fa fa-check"></i> two medium-sized <br>balconies overlooking <br>the countryside<br><i class="fa fa-check"></i> 24/7 security system<br><i class="fa fa-check"></i> daily clean-up<br><i class="fa fa-check"></i> free WiFi<br><i class="fa fa-check"></i> free bathing products<br><i class="fa fa-check"></i> small garden with <br>pathways and fountains<br><i class="fa fa-check"></i> perfect spot for <br>watching the scenery <br>and going on picnics</h5>
+	</button>
+		<h3 class="movement-scroll from-bottom">Step 2: Input the amount of months, weeks, or days.<span style="color:#7F867B;">*</span></h3>
+	<form class="step2 movement-scroll from-right">
+		<input type="text" onfocus="this.value=''" value="">
+		<label> months<br></label>
+		<input type="text" onfocus="this.value=''" value="">
+		<label> weeks<br></label>
+		<input type="text" onfocus="this.value=''" value="">
+		<label> days</label>
+	</form>
+		<h3 class="movement-scroll from-bottom">Step 3: Choose your offerings.<span style="color:#7F867B;">*</span></h3>
+	<button class="step3 movement-scroll from-bottom">
+		<h4>Beauty & Self-care</h4>
+		<h3>$0.95<span style="font-size: 16px;">/min</span></h3>
+		<h5><i class="fa fa-check"></i> massage<br><i class="fa fa-check"></i> manicures<br><i class="fa fa-check"></i> pedicures<br><i class="fa fa-check"></i> creams, lotions, and face masks<br><i class="fa fa-check"></i> Jacuzzis and hot tubs ($25/person)</h5>
+	</button>
+	<button class="step3 movement-scroll from-bottom" style="float: right;">
+		<h4>Community Activities</h4>
+		<h3>FREE</h3>
+		<h5><i class="fa fa-check"></i> daily arts and crafts session<br><i class="fa fa-check"></i> weekly lottery and raffle ticket drawings<br><i class="fa fa-check"></i> annual dance and music festival</h5>
+	</button>
+	<button class="step3 movement-scroll from-bottom">
+		<h4>Culinary Arts</h4>
+		<h3>FREE<span style="font-size: 16px;">/in-offering purchases</span></h3>
+		<h5><i class="fa fa-check"></i> breakfast in tavern's lobby<br><i class="fa fa-check"></i> lunch and dinner at nearby restaurants<br><i class="fa fa-check"></i> all-day picnics<br><i class="fa fa-check"></i> watch professional chefs cook up enticing <br>cuisines in front of you ($25/person)<br><i class="fa fa-check"></i> evening fine dining at Michewlin star <br>restaurant Lilybelle Fine Dining ($25/person)</h5>
+	</button>
+	<button class="step3 movement-scroll from-bottom" style="float: right; margin: 20px 0px 0px;">
+		<h4>Visual/Performing Arts</h4>
+		<h3>$45<span style="font-size: 16px;">/person</span></h3>
+		<h5><i class="fa fa-check"></i> prestigious gallery of art<br><i class="fa fa-check"></i> weekly concerts<br><i class="fa fa-check"></i> annual plays, musicals, and dance <br>performances<br></h5>
+	</button>
+	<button class="step3 movement-scroll from-bottom" style="margin: 70px 13%;">
+		<h4>Sight-seeing Trips</h4>
+		<h3>Prices vary</h3>
+		<h5><i class="fa fa-check"></i> hiking/biking along the Trail Mix (FREE)<br><i class="fa fa-check"></i> zipline over Tofu Treetops ($15/person)<br><i class="fa fa-check"></i> paraglide over the countryside and Mount Citrus ($25/person)<br><i class="fa fa-check"></i> ride up the gondola and into the clouds ($20/person)<br><i class="fa fa-check"></i> ski($15/person)<br><i class="fa fa-check"></i> swimming/diving in our natural springs and lagoons ($15/person)<br><i class="fa fa-check"></i> camp in the wilderness ($175/day)<br><i class="fa fa-check"></i> visit our Butterfly Garden (FREE)<br><i class="fa fa-check"></i> travel to the nearest villages and towns ($275/day)</h5>
+	</button>
+		<h3 class="movement-scroll from-bottom">Step 4: Apply discount code(s).</h3>
+		<h5 class="movement-scroll from-bottom">Don't have a discount code? Try using <em>THETROJANSSUCK</em>.</h5>
+	<form class="step4 movement-scroll from-right">
+		<input type="text" onfocus="this.value=''" value="">
+	</form>
+		<h3 class="movement-scroll from-bottom">Step 5: Calculate costs.<span style="color:#7F867B;">*</span></h3>
+		<h5 class="movement-scroll from-bottom">Now is the time to start calculating the cost of your stay with us! <br>You're lazy? Well, why don't you use an online calculator or one <br>on your phone? Too lazy to do that? Use paper and pencil! Even <br>more lazy? Do mental math! Your brain is hurting? Well, <br>according to the STUDIES-THAT-ARE-NOT-BEING-TESTED-OR-<br>PROVEN-CORRECTLY-HANDBOOK, once people graduate college, <br>they forget 99.99% of what they learned in school. So let's <br>squeeze your brain and spill out all the juicy gossip and <br>stupidity from the past few years, and let's put on your <br>thinking cap.</h5>
+		<h3 class="movement-scroll from-bottom">Step 6: Pay.<span style="color:#7F867B;">*</span></h3>
+		<h5 class="movement-scroll from-bottom">Total cost:</h5>
+	<form class="step6 movement-scroll from-right">	
+		<input type="text" onfocus="this.value='$'" value="$">
+	</form>
+		<h5 class="movement-scroll from-bottom">Credit card number:</h5>
+	<form class="step6 movement-scroll from-right">	
+		<input type="text" onfocus="this.value=''" value="XXXXXXXXXXXXXXXX">
+	</form>
+		<button class="green-button-rectangle movement-scroll from-bottom" style="padding: 0px 15x; margin: 40px 0px 0px 44.5%" onclick="theEnding()">Submit</button>
+	</div>
+
+	<footer>
+	<div id="address-footer" class="movement-scroll from-bottom">
+		<h1 class="footer-title">Address</h1>
+		<h1 class="footer-description" style="cursor: pointer;">0216 Citrus Lane<br>CaliFlorida<br>United Produce</h1>
+	</div>
+	<div id="contact-footer" class="movement-scroll from-bottom">
+		<h1 class="footer-title">Contact</h1>
+		<h1 class="footer-description" style="cursor: pointer;">contact@tangerinetavern.com<br><br>+1 (333) 500-0216</h1>
+	</div>
+
+	<div id="sections-footer" class="movement-scroll from-bottom">
+		<h1 class="footer-title">Sections</h1>
+		<h1 class="footer-description"><a href="#fro-bottom-to-top">Home</a><br><a href="#fro-intro-to-about">About</a><br><a href="#fro-about-to-offerings">Offerings</a><br><a href="#fro-offerings-to-reviews">Reviews<br><a href="#faq-section">FAQ</a><br><span style="color: rgba(127, 134, 123, 0.8);"><a href="#book-now-section">Book now!</a></span></h1>
+	</div>
+
+	<div id="follow-us-footer" class="movement-scroll from-bottom">
+		<h1 class="footer-title">Follow us</h1>
+		<h1 class="footer-description" style="cursor: pointer;"><i style="color: rgba(127, 134, 123, 0.8); font-size: 20px;" class="fa fa-instagram"></i> @tangerine.tavern_official<br><br><i style="color: rgba(127, 134, 123, 0.8); font-size: 20px;" class="fa fa-pinterest"></i> @tangerine.tavern_official</h1>
+	</div>
+
+	<div class="bottom-footer movement-scroll from-top">
+		<p>&copy; Tangerine Tavern.<br>All rights reserved.</p>
+		<p>Any outside resources that do not belong to this website are credited in the code.</p>
+		<p>Please note that all of the content on this webpage is entirely fake. This webpage is only for practicing web development skills, as well as for humor and entertainment. All of the above information is completely made up. If any incidents and/or events somehow connect with any of the above information, it is entirely coincidental.<br><br><br><br></p>
+		<a href="#fro-bottom-to-top" id="different-button-circle">⋀</a>
+	</div>
+	</footer>
+	</div>
+</body>
+<script>
+	var modal = document.getElementById("myModal");
+	var btn = document.getElementById("myBtn");
+	var span = document.getElementsByClassName("close")[0];
+
+	btn.onclick = function() {
+		modal.style.display = "block";
+	}
+
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+	}
+</script>
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var panel = this.nextElementSibling;
+	if (panel.style.display === "block") {
+		panel.style.display = "none";
+	} else {
+		panel.style.display = "block";
+	}
+	});
+	}
+</script>
+<script type>
+	(function() {
+	const scrollElements = document.querySelectorAll(".movement-scroll");
+        
+	function elementIsInView(el, divisor = 1) {
+	const elementTop = el.getBoundingClientRect().top;  
+	return elementTop <= window.innerHeight / divisor;
+	}
+
+	function handleScrollAnimation() {
+	scrollElements.forEach((el) => {
+
+	if (elementIsInView(el,1.25)) {
+		el.classList.add("view");
+	} else if (!elementIsInView(el)) {
+		el.classList.remove("view");
+	}
+	});
+	}
+
+        window.addEventListener("scroll", handleScrollAnimation);
+	})();
+      
+</script>
+</html>
